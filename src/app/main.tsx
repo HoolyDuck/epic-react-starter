@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { Provider } from 'react-redux';
-import { store } from '../lib/store/store.ts';
+import { store } from '@/lib/store/store.ts';
 import { RouterProvider } from '@/lib/router/router-provider.tsx';
+
+import '@/styles/index.scss';
+import { MainPage } from '@/pages/index.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -14,7 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         path: '/',
                         element: <App />,
                         children: [
-                            // ... other routes
+                            { path: '/', element: <MainPage /> },
+                            // Others
                         ],
                     },
                 ]}
